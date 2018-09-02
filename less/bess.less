@@ -1,0 +1,160 @@
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 16px;
+}
+@main-color: #f10215;
+// 样式初始化文件
+* {
+    margin: 0;
+    padding: 0; // 移动端防止边框和padding撑大盒子
+    box-sizing: border-box; // 清除移动端的a按住的高亮背景色   设置透明色即可
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+li {
+    // 去掉li的小圆点
+    list-style: none;
+}
+
+input {
+    // 去掉输入框的内外边框
+    border: 0;
+    outline: 0;
+}
+
+img {
+    // 去掉图片的边框
+    border: none; // 去掉图片底部0.03rem的间距
+    vertical-align: middle;
+}
+
+// 去掉a的下划线
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+// 清除浮动
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.bl {
+    border-left: 0.01rem solid #ccc;
+}
+
+.bt {
+    border-top: 0.01rem solid #ccc;
+}
+
+.br {
+    border-right: 0.01rem solid #ccc;
+}
+
+.bb {
+    border-bottom: 0.01rem solid #ccc;
+}
+
+// 头部样式
+#header {
+    height: 0.45rem;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    position: fixed;
+    width: 100%;
+    max-width: 6.4rem;
+    z-index: 2;
+    [class^="icon-"] {
+        background-image: url(../images/sprites.png);
+        background-size: 2rem 2rem;
+        background-origin: content-box;
+        background-clip: content-box;
+    }
+    .icon-logo {
+        display: block;
+        width: 0.8rem;
+        height: 0.3rem;
+        background-position: 0 -1.08rem; //  background-image:url(../images/sprites.png);
+        // background: url(../images/sprites.png) 0px -1.08rem ~'/' 2rem 2rem;
+        padding: 0.04rem 0.1rem;
+        margin-top: 0.05rem;
+    }
+    .icon-back {
+        display: block;
+        width: 0.4rem;
+        height: 0.4rem;
+        padding: 0.1rem;
+        background-position: -0.2rem 0;
+    }
+    .icon-menu {
+        display: block;
+        width: 0.4rem;
+        height: 0.4rem;
+        padding: 0.1rem;
+        background-position: -0.6rem 0;
+    }
+    .search-from {
+        flex: 1;
+        position: relative;
+        margin-top: 0.05rem;
+        .icon-search {
+            width: 0.2rem;
+            height: 0.2rem;
+            position: absolute;
+            left: 0.1rem;
+            top: 0.05rem;
+            background: url(../images/sprites.png) -0.6rem -1.08rem ~'/' 2rem 2rem;
+            background-clip: content-box;
+            background-origin: content-box;
+        }
+        >input {
+            width: 100%;
+            height: 0.3rem;
+            padding-left: 0.3rem;
+            border-radius: 0.15rem;
+        }
+    }
+    .login {
+        width: 0.5rem;
+        height: 0.35rem;
+        font-size: 0.14rem;
+        color: #fff;
+        line-height: 0.35rem;
+        text-align: center;
+    }
+}
+
+// 京东底部
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 6.4rem;
+    background-color: #fff;
+    >ul {
+        display: flex;
+        >li {
+            flex: 1;
+            >a {
+                display: inline-block;
+                text-align: center;
+                >img {
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+// 引入公共样式的文件
+@import 'bess.less';
+#header {
+    background-color: #eee;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+#main {
+    height: 100%;
+    overflow: hidden;
+    padding: 0.45rem 0px 0.5rem;
+    display: flex;
+    // 左侧
+    .category-left {
+        height: 100%;
+        overflow: hidden;
+        width: 0.85rem;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        ul {
+            height: auto;
+            li {
+                a {
+                    display: block;
+                    height: 0.46rem;
+                    width: 0.85rem;
+                    line-height: 0.46rem;
+                    text-align: center;
+                    font-size: 0.14rem;
+                    background-color: #eee;
+                }
+                &.active {
+                    >a{
+                        background-color: #fff;
+                        color: @main-color;
+                    }
+                  
+                }
+            }
+        }
+    }
+    // 右侧
+    .category-right {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        #branchList {
+            height: auto;
+            .jd-brand {
+                h4 {
+                    font-size: 0.14rem;
+                    line-height: 0.4rem;
+                    padding-left: 0.2rem;
+                }
+                ul {
+                    display: flex; 
+                    flex-wrap: wrap;// 让li换行
+                    li {
+                       width: 33.33%;
+                        margin: 0.05rem 0px;
+                        a {
+                            display: block;
+                            text-align: center;
+                            img {
+                                width: 0.7rem;
+                            }
+                            span {
+                                display: block;
+                                font-size: 0.12rem;
+                                margin: 0.05rem 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
